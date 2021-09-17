@@ -28,14 +28,14 @@ for (let str of tri) {
 // the original value
 // Since we're traveling up the tree, the max value will be all that's left at arr[0][0]!
 
-var maxTotal = (T) => {
+const maxTotalPathfinder = (T) => {
   for (let i = T.length - 2; i >= 0; i--) {
       for (let j = T[i].length - 1; j >= 0; j--) {
           T[i][j] += Math.max(T[i + 1][j], T[i + 1][j + 1]);
       }
   }
-  console.log(T[0,0])
+  console.log(T[0][0])
   return T[0][0];
 };
 
-maxTotal(triArr)
+maxTotalPathfinder(triArr)
